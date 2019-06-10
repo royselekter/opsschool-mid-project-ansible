@@ -1,10 +1,13 @@
 #! /bin/bash
  
-apt-add-repository ppa:ansible/ansible -y
-apt-get update -y
-apt-get install ansible -y
 
+# apt-add-repository ppa:ansible/ansible -y
+# apt-get update -y
+# apt-get install ansible -y
 
+until apt-add-repository ppa:ansible/ansible -y; do echo "Retrying step 1" >> install-log; sleep 2; done
+until apt-get update -y; do echo "Retrying step 2" >> install-log; sleep 2; done
+until apt-get install ansible -y; do echo "Retrying step 3" >> install-log; sleep 2; done
 
 
 # I=0
@@ -19,7 +22,7 @@ apt-get install ansible -y
 #     break
 #   fi
 #   I=$((I+1))
-#   sleep 2
+#   sleep 5
 # done
 
 # echo "finished"
