@@ -10,7 +10,10 @@ until sudo apt-get update -y; do echo "Retrying step 2" ; sleep 2; done
 until sudo apt-get install ansible -y; do echo "Retrying step 3" ; sleep 2; done
 
 
-until sudo chown -R ubuntu /home/ubuntu/.ansible; do echo "Retrying step 4" ; sleep 2; done
+# until
+ sudo chown -R ubuntu /home/ubuntu/.ansible 
+ 
+# until sudo chown -R ubuntu /home/ubuntu/.ansible; do echo "Retrying step 4" ; sleep 2; done
 
 
 
