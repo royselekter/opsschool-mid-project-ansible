@@ -1,22 +1,24 @@
 #! /bin/bash
  
-
+apt-get update -y
+sudo apt install software-properties-common -y
 apt-add-repository ppa:ansible/ansible -y
 apt-get update -y
-apt-get install ansible -y
+apt install ansible -y
+
+
+# todo:
 
 # until sudo apt-add-repository ppa:ansible/ansible -y; do echo "Retrying step 1" ; sleep 2; done
 # until sudo apt-get update -y; do echo "Retrying step 2" ; sleep 2; done
 # until sudo apt-get install ansible -y; do echo "Retrying step 3" ; sleep 2; done
 
-sleep 60
+sleep 30
 
 # until
-#  sudo chown -R ubuntu /home/ubuntu/.ansible 
+ sudo chown -R ubuntu /home/ubuntu/.ansible 
 
 # until sudo chown -R ubuntu /home/ubuntu/.ansible; do echo "Retrying step 4" ; sleep 2; done
-
-
 
 
 # I=0
