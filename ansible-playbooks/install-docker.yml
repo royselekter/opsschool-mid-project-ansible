@@ -2,6 +2,8 @@
 - name: Install docker
   hosts: nodes
   become: true
+  become_user: ubuntu
+
   tasks:
        
     - name: Docker | Install Docker | Install Docker from Repo
@@ -11,6 +13,7 @@
         state: present
       become: true
       become_method: sudo
+      become_user: ubuntu
 
     - name: Docker | Install Docker | Create Docker group
       group:
@@ -25,6 +28,7 @@
         append: yes
       become: true
       become_method: sudo
+      become_user: ubuntu
       
 
 # user vars 
@@ -37,6 +41,7 @@
         append: yes
       become: true
       become_method: sudo
+      become_user: ubuntu
 
       
     # - name: xxxx
@@ -59,3 +64,4 @@
         state: restarted
       become: true
       become_method: sudo
+      become_user: ubuntu
